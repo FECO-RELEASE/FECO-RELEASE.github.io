@@ -142,12 +142,10 @@
         <h2 class="title is-3">Model Architecture</h2>
         <div class="content has-text-justified">
           <p>
-            Our method encodes input image as image tokens with a ViT backbone after patch embedding layers. 
-            Given the image tokens along with positional embeddings and a contact token, multiple layers of self-attention Transformer and cross-attention Transformer produce an output token. 
-            Lastly, the output token is further processed with a linear layer and added with contact initialization that passes sigmoid layer to output final hand contact prediction.
+            Our method first applies low-level style randomization on input image and encodes it into image feature using a ViT backbone. From image feature, shoe style and shoe content randomization are performed with random shoe images from the UT Zappos50K dataset to produce a shoe style-invariant feature. This feature is then processed by a ground feature encoder to extract ground feature, which is used to predict pixel height map and ground normal. Finally, the ground feature and shoe style-invariant feature are fused to form a contact feature, which is decoded to produce the final foot contact prediction.
           </p>
         </div>
-        <img src="./static/images/haco_overall_pipeline.png" height="250%">
+        <img src="./static/images/feco_overall_pipeline.png" height="250%">
       </div>
     </div>
     <!--/ Model Architecture -->
