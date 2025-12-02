@@ -96,22 +96,6 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- <p style="text-align: center;">
-        <img src="./static/images/haco_challenges.png" style="max-height: 750px; height: auto;">
-      </p> -->
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/images/haco_promote_video_final.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">HACO</span> is the first method for dense hand contact estimation.
-      </h2>
-    </div>
-  </div>
-</section> -->
 
 
 <section class="section">
@@ -122,17 +106,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Hands are essential to human interaction, and understanding contact between hands and the world can promote comprehensive understanding of their function. 
-            Recently, there have been growing number of hand interaction datasets that cover interaction with object, other hand, scene, and body. 
-            Despite the significance of the task and increasing high-quality data, how to effectively learn dense hand contact estimation remains largely underexplored. 
-            There are two major challenges for learning dense hand contact estimation. 
-            First, there exists class imbalance issue from hand contact datasets where majority of samples are not in contact. 
-            Second, hand contact datasets contain spatial imbalance issue with most of hand contact exhibited in finger tips, resulting in challenges for generalization towards contacts in other hand regions. 
-            To tackle these issues, we present a framework that learns dense HAnd COntact estimation (HACO) from imbalanced data. 
-            To resolve the class imbalance issue, we introduce balanced contact sampling, which builds and samples from multiple sampling groups that fairly represent diverse contact statistics for both contact and non-contact samples. 
-            Moreover, to address the spatial imbalance issue, we propose vertex-level class-balanced (VCB) loss, which incorporates spatially varying contact distribution by separately reweighting loss contribution of each vertex based on its contact frequency across dataset. 
-            As a result, we effectively learn to predict dense hand contact estimation with large-scale hand contact data without suffering from class and spatial imbalance issue. 
-            The codes will be released.
+            Foot contact plays a critical role in human interaction with the world, and thus exploring foot contact can advance our understanding of human movement and physical interaction. Despite its importance, existing methods often approximate foot contact using a zero-velocity constraint and focus on joint-level contact, failing to capture the detailed interaction between the foot and the world. Dense estimation of foot contact is crucial for accurately modeling this interaction, yet predicting dense foot contact from a single RGB image remains largely underexplored. There are two main challenges for learning dense foot contact estimation. First, shoes exhibit highly diverse appearances, making it difficult for models to generalize across different styles. Second, ground often has a monotonous appearance, making it difficult to extract informative features. To tackle these issues, we present a FEet COntact estimation (FECO) framework that learns dense foot contact with shoe style-invariant and ground-aware learning. To overcome the challenge of shoe appearance diversity, our approach incorporates shoe style adversarial training that enforces shoe style-invariant features for contact estimation. To effectively utilize ground information, we introduce a ground feature extractor that captures ground properties based on spatial context. As a result, our proposed method achieves robust foot contact estimation regardless of shoe appearance and effectively leverages ground information. Code will be released.
           </p>
         </div>
       </div>
@@ -154,7 +128,7 @@
         <h2 class="title is-3">Dataset Configuration</h2>
         <div class="content has-text-justified">
           <p>
-            We leverage 14 datasets with various hand interaction. The datasets span hand-object interaction, hand-hand interaction, hand-scene interaction, hand-body interaction.
+            We leverage 10 publicly-available datasets with various foot interaction. On top of the datasets, we propose COFE dataset that provides in-the-wild joint-level foot contact annotations.
           </p>
         </div>
         <img src="./static/images/haco_dataset_configuration.png" height="250%">
